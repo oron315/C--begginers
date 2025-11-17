@@ -6,10 +6,12 @@
 
 #include <stdio.h>
 
-const float delivery_price = 5.5;
-const int price_per_kilo = 11; //[1/kg]
-const float price_per_square_cm = 0.03; //[1/cm^2]
-const float price_size_compare_to_mass = 0.01; //[cm^2/kg]
+#define DELIVERY_PRICE 5.5
+#define PRICE_PER_KILO 11 //[1/kg]
+#define PRICE_PER_SQUARE_CM 0.03 //[1/cm^2]
+#define PRICE_SIZE_CONPARE_TO_MASS 0.01 //[cm^2/kg]
+#define CONVER_CM_TO_MM 10
+#define CONVER_KG_TO_G 1000
 
 int main() {
     //Setting the variables
@@ -26,9 +28,9 @@ int main() {
 
 
     //Conversion between the units to the untis given in the price calculations.
-    size = (float)length * width  / 100; //size in cm^2
-    mass_kg = (float)mass_grams / 1000; //mass in kg
-    price = delivery_price + price_per_kilo * mass_kg + price_per_square_cm * size + price_size_compare_to_mass *size / mass_kg;
+    size = (float)length * width  / (CONVER_CM_TO_MM * CONVER_CM_TO_MM); //size in cm^2
+    mass_kg = (float)mass_grams / CONVER_KG_TO_G; //mass in kg
+    price = DELIVERY_PRICE + PRICE_PER_KILO * mass_kg + PRICE_PER_SQUARE_CM * size + PRICE_SIZE_CONPARE_TO_MASS *size / mass_kg;
 
     //Printing
     printf("The size of the package in cm^2:%.2f\n", size);
