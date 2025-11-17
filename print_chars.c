@@ -8,7 +8,7 @@
 
 
 int main() {
-    //Setting variables for input, loops, and flags to help control the conditions requested
+    //Setting variables for input
     int input_num = 0;
   
     //Input from the user + checking if valid input
