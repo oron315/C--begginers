@@ -9,9 +9,9 @@
 
 int main() {
 
-    int x = 10;
-    int y = 5;
-    int z = y * (y > x) + x * (x > y) + x * (x == y); // each >,== operation gives 0 or 1, so by multiplaying by the value we get the max.
+    int x = 12;
+    int y = 11;
+    int z = y * (y >= x) + x * (x > y); // each >= operation gives 0 or 1, so by multiplaying by the value we get the max.
     printf("%d", z);
     return 0;
 }
